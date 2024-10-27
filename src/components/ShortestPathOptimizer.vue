@@ -43,8 +43,7 @@
             <div class="flex items-center justify-start">
               <Button
                 appearance="outline"
-                class="mr-[12px] h-[44px] w-full"
-                style="width: 50%;"
+                class="mr-[12px] h-[44px] w-[75px]"
                 type="reset"
                 :disabled="isClearBtnDisabled"
                 @click="clearBtnHandler"
@@ -58,6 +57,7 @@
                 :loading="isAppLoading"
                 :disabled="isCalculateBtnDisabled"
                 class="min-w-[146px] h-[44px] w-full"
+                :style="{ width: mode === 'input' ? '144px' : '' }"
                 @click="calculateHandler"
                 :icon="calculatorIcon"
               >
