@@ -11,12 +11,13 @@
       <span class="text-sm font-medium ml-3 text-color-body">{{ label }}</span>
     </label>
     <button
-      v-if="modelValue"
-      class="flex random-node ml-2 cursor-pointer" 
+      v-if="modelValue && hasRefreshIcon"
+      class="flex random-node ml-2 cursor-pointer border border-gray-300 rounded-full p-1 hover:border-color-secondary
+             focus:outline-none focus:ring-2 focus:ring-color-secondary active:bg-gray-200 active:scale-95 transition-transform duration-200 ease-in-out" 
       @click="emitRefreshClick" 
       aria-label="Refresh Selection" 
     >
-      <img src="../../assets/refresh.svg" alt="Refresh" class="h-5 w-5" />
+      <img src="../../assets/refresh.svg" alt="Refresh" class="h-5 w-5 transition-transform duration-200 ease-in-out" />
     </button>
   </div>
 </template>
@@ -25,7 +26,7 @@
 const props = defineProps<{
   label?: string;
   checked?: boolean;
-  modelValue?:boolean;
+  modelValue?: boolean;
   hasRefreshIcon?: boolean;
 }>();
   
@@ -45,11 +46,6 @@ const emitRefreshClick = () => {
 </script>
   
 <style scoped>
-.random-node {
-  background: none;
-  border: none;
-  padding: 0;
-}
 .random-node img {
   transition: transform 0.3s;
 }

@@ -5,6 +5,7 @@
     "strict": true,
     "jsx": "preserve",
     "moduleResolution": "node",
+    "types": ["vitest/globals", "node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

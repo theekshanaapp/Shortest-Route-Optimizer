@@ -86,7 +86,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, toRaw } from 'vue';
+import { onMounted, ref, toRaw, defineExpose} from 'vue';
 import Toggle from './Toggle/Toggle.vue';
 import Select from './Select/Select.vue';
 import Button from './Button/Button.vue';
@@ -277,4 +277,11 @@ const calculateHandler = async () => {
     isAppLoading.value = false;
   }
 };
+
+// Exposing the methods for testing
+defineExpose({
+  calculateHandler: calculateHandler as () => Promise<void>,
+  handleFromChange: handleFromChange as (selected: OptionType | null) => void,
+  handleToChange: handleToChange as (selected: OptionType | null) => void,
+});
 </script>
