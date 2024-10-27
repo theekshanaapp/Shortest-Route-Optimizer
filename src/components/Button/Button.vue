@@ -1,15 +1,15 @@
 <template>
-    <button
-      :class="buttonClass"
-      :disabled="disabled || loading"
-      @click="handleClick"
-      :type="type"
-    >
-      <span v-if="hasIcon" class="mr-2">
-        <img :src="icon" alt="Icon" />
-      </span>
-      <slot />
-    </button>
+  <button
+    :class="buttonClass"
+    :disabled="disabled || loading"
+    @click="handleClick"
+    :type="type"
+  >
+    <slot />
+    <span v-if="hasIcon" class="ml-2">
+      <img :src="icon" alt="Icon" />
+    </span>
+  </button>
 </template>
   
 <script lang="ts" setup>
